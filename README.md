@@ -1,9 +1,7 @@
 # Recruiter-Interviewer
 Key Projects aimed to show case to Recruiters and  Interviewers
 
-This repository contains 3 main projects and mini projects with in the subfolders 
-
-Every project folders have readme files and subproject folders explaining the detials of the project. Check the readme files on subfolders to get the overview of the project. 
+This repository contains project folders and Readme file within the project folder giving the overview of the project and explaining the detials of that project 
 
 ## 1. ROS2 Projcts
 
