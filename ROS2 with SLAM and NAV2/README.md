@@ -4,8 +4,6 @@
 ## 1. ROS2 with SLAM and NAV2 
 
 
-Interact Programmatically with Nav2 Stack 
-
 > Click here to watch demo video
 
 > [https://www.youtube.com/watch?v=1kV-rZZw50Q]
@@ -13,7 +11,7 @@ Interact Programmatically with Nav2 Stack
 [<img src="Images/play.png" width="40%">](https://www.youtube.com/watch?v=1kV-rZZw50Q "")
 
 
-#### Nav2 stack two step process
+### Nav2 stack two step process
 
 1. Create a map (with SLAM) 
 2. Make the robot navigate from point A to point B
@@ -69,7 +67,7 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 - Add objects on Gazebo to see how the robot avoid obstacle dynamically 
 
 
-#### Let's understand Global Planner and Local Planner 
+### Let's understand Global Planner and Local Planner 
 
 - Blue line is local planner and pink line is the global planner 
 - Robot will use a path that have low cost
@@ -88,24 +86,30 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 ![Alt text](Images/plan.png)
 
 
-#### Recovery Behavior
+### Recovery Behavior
 
 - A recovery behavior try to fix the current issue so that the robot can continue to reach the destination goal.
 - 
 
 
-#### Transforms TFs  and important frames
+### Transforms TFs  and important frames
 
 - In a robot we will have different frames representing the different parts of the robot.
 
 
 
-#### Nav2 Architecture 
+### Nav2 Architecture 
 
 ![Alt text](Images/Architect.png)
 
 - When the stack receives a pose goal, it will first use the planner server to find a valid path. 
 - Then it will use the controller to make the robot follow the path.
 - And in case of an issue, it will call the recovery server to try a recovery behavior.
+
+
+### Interact Programmatically with Nav2 Stack 
+
+
+
 
 
