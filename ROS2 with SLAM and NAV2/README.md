@@ -109,8 +109,14 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 
 ### Interact Programmatically with Nav2 Stack 
 
+![Alt text](Images/Program.png)
 
+- The navigation stack use ROS2 topics services action etc..
+- when we set an initial pose in Rviz, behind the scenes it actually using a topic 
+- When you send a navigation goal, it's using an action.
+- Python API communicate with navigation stack using python code.
 
+- 
 
 
 
