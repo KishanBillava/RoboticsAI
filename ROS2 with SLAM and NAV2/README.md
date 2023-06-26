@@ -128,7 +128,7 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 
 
 
-<code>***python Code in the folder Nav2Code***</code>
+<code>***Code is in the Nav2Code folder***</code>
 
 ```py
     qx, qy, qz, qw = tf_transformations.quaternion_from_euler(0.0, 0.0, 1.57)

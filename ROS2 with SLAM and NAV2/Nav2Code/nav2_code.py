@@ -54,6 +54,8 @@ def main():
 
     print(nav.getResult())
 
+    nav.followWaypoints(())
+
     rclpy.shutdown()
 
 
