@@ -112,12 +112,55 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 ![Alt text](Images/Program.png)
 
 - The navigation stack use ROS2 topics services action etc..
-- when we set an initial pose in Rviz, behind the scenes it actually using a topic 
-- When you send a navigation goal, it's using an action.
+- For exmaple, when we set an initial pose in Rviz it using a topic and when sent navigation goal, it uses action.
 - Python API communicate with navigation stack using python code.
 
+```sh
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=ros2save/maps/mymap.yaml 
+
+```
+
+- We know that geometry message have position and the orientation of the robot stamped with the time.
+- So to create a initial pose, we have to create a publisher to this topic.
 - 
+- Create a navigation object and set inital pose 
 
 
 
+<code>***python Code in the folder Nav2Code***</code>
 
+```py
+    qx, qy, qz, qw = tf_transformations.quaternion_from_euler(0.0, 0.0, 1.57)
+    goal_pose = PoseStamped()
+    goal_pose.header.frame_id = 'map'
+    goal_pose.header.stamp = nav.get_clock().now().to_msg()
+    goal_pose.pose.position.x = 3.5
+    goal_pose.pose.position.y = 1.0
+    goal_pose.pose.position.z = 0.0
+    goal_pose.pose.orientation.x = qx
+    goal_pose.pose.orientation.y = qy
+    goal_pose.pose.orientation.z = qz
+    goal_pose.pose.orientation.w = qw
+
+    nav.goToPose(goal_pose)
+
+    while not nav.isTaskComplete():
+        feedback = nav.getFeedback()
+        print(feedback)
+```
+
+
+![Alt text](Images/nav_res.png)
+
+
+```py
+nav2_msgs.action.NavigateToPose_Feedback(
+current_pose=geometry_msgs.msg.PoseStamped(
+header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=1818, nanosec=410000000), frame_id='map'), 
+pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=3.459553500671068, y=0.9892593084058563, z=0.010001855494049965), 
+orientation=geometry_msgs.msg.Quaternion(x=-0.0009517658906479603, y=-0.0005040175602365947, z=0.6130913289260752, w=0.7900113053011631))), 
+navigation_time=builtin_interfaces.msg.Duration(sec=26, nanosec=486000000), estimated_time_remaining=builtin_interfaces.msg.Duration(sec=0, nanosec=0), 
+number_of_recoveries=0, distance_remaining=0.06999994814395905)
+
+```
