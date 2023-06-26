@@ -125,6 +125,8 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 - So to create a initial pose, we have to create a publisher to this topic.
 - 
 - Create a navigation object and set inital pose 
+- provide navigation goal or waypoints 
+- 
 
 
 
@@ -156,11 +158,11 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 
 ```py
 nav2_msgs.action.NavigateToPose_Feedback(
-current_pose=geometry_msgs.msg.PoseStamped(
-header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=1818, nanosec=410000000), frame_id='map'), 
-pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=3.459553500671068, y=0.9892593084058563, z=0.010001855494049965), 
-orientation=geometry_msgs.msg.Quaternion(x=-0.0009517658906479603, y=-0.0005040175602365947, z=0.6130913289260752, w=0.7900113053011631))), 
-navigation_time=builtin_interfaces.msg.Duration(sec=26, nanosec=486000000), estimated_time_remaining=builtin_interfaces.msg.Duration(sec=0, nanosec=0), 
-number_of_recoveries=0, distance_remaining=0.06999994814395905)
+    current_pose=geometry_msgs.msg.PoseStamped(
+        header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=1818, nanosec=410000000), frame_id='map'), 
+        pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=3.459553500671068, y=0.9892593084058563, z=0.010001855494049965), 
+        orientation=geometry_msgs.msg.Quaternion(x=-0.0009517658906479603, y=-0.0005040175602365947, z=0.6130913289260752, w=0.7900113053011631))), 
+        navigation_time=builtin_interfaces.msg.Duration(sec=26, nanosec=486000000), estimated_time_remaining=builtin_interfaces.msg.Duration(sec=0, nanosec=0), 
+        number_of_recoveries=0, distance_remaining=0.06999994814395905)
 
 ```
