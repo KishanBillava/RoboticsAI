@@ -7,9 +7,6 @@ Key Projects aimed to show case to Recruiters and  Interviewers
 
 - ROS2 with SLAM and NAV2 
 - ROS2 ReactJS Web Application using Robot Web Tools
-- 
+- ROS2 Turtlesim using Launch File
 
-## 2. Deep Learning with Computer Vision 
-
-- ComputerVision CIFAR-10 Dataset 
 
