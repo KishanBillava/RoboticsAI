@@ -4,11 +4,6 @@
 ## 1. ROS2 with SLAM and NAV2 
 
 
-> Click here to watch demo video
-
-> [https://github.com/KishanBillava]
-
-[<img src="Images/play.png" width="40%">](https://github.com/KishanBillava "")
 
 
 ### Nav2 stack two step process
